@@ -1,6 +1,2 @@
 config.yaml
-cli-proxy-api
-6.8.55/
-static/
-version.txt
 *.log
