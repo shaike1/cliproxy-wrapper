@@ -531,7 +531,6 @@ function buildParams(model, context, isOAuthToken, options) {
     if (context.tools) {
         params.tools = convertTools(context.tools, isOAuthToken);
     }
-    console.error(`[DEBUG-TOOLS-ANTH] buildParams model=${model.id} provider=${model.provider} tools=${params.tools ? params.tools.length : 'NONE'} context.tools=${context.tools ? context.tools.length : 'NONE'} toolNames=${params.tools ? params.tools.map(t => t.name).join(',') : 'NONE'} systemPromptLen=${typeof params.system === 'string' ? params.system.length : JSON.stringify(params.system || '').length} msgCount=${params.messages?.length}`);
     // Configure thinking mode: adaptive (Opus 4.6 and Sonnet 4.6) or budget-based (older models)
     if (options?.thinkingEnabled && model.reasoning) {
         if (supportsAdaptiveThinking(model.id)) {
