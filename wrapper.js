@@ -5,7 +5,7 @@ const PORT = 8318;
 const BIND = "0.0.0.0"; // Allow remote connections from .12
 
 // Throttle settings
-const MIN_INTERVAL_MS = 3000;  // Min 2 seconds between requests to Claude
+const MIN_INTERVAL_MS = 1000;  // Min 1 second between requests to Claude
 const MAX_QUEUE = 8;           // Max queued requests before rejecting
 
 let lastRequestTime = 0;
