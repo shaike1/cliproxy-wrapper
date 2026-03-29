@@ -63,8 +63,8 @@ function forwardRequest(req, res, body) {
         } catch {}
 
         if (rewrite) {
-          // CLIProxy is rate-limited: apply 30s cooldown before allowing next request to CLIProxy
-          lastRequestTime = Date.now() + 27000;
+          // CLIProxy is rate-limited: apply 60s cooldown (Claude Max requires ~59s)
+          lastRequestTime = Date.now() + 57000;
           const newBody = JSON.stringify({
             type: "error",
             error: {

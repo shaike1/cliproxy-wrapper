@@ -149,9 +149,9 @@ export const streamAnthropic = (model, context, options) => {
             if (nextParams !== undefined) {
                 params = nextParams;
             }
-            // NON-STREAMING PATH: Always use non-streaming for cliproxy and copilot-proxy providers
+            // NON-STREAMING PATH: Always use non-streaming for local proxy providers
             // to avoid SSE streaming bug where tool_use content blocks are dropped from SSE streams.
-            if (model.provider === "cliproxy" || model.provider === "copilot-proxy") {
+            if (model.provider === "cliproxy" || model.provider === "copilot-proxy" || model.provider === "gh-proxy") {
                 const nonStreamResp = await client.messages.create({ ...params, stream: false });
                 for (const block of (nonStreamResp.content || [])) {
                     if (block.type === 'text') {
