@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/root/cliproxyapi
-ExecStart=/root/cliproxyapi/cli-proxy-api
+ExecStart=/root/cliproxyapi/docker-entrypoint.sh
 Restart=always
 RestartSec=10
 Environment=HOME=/root

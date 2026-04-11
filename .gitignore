@@ -1,2 +1,5 @@
 config.yaml
 *.log
+.mcp.json
+.relay_session_id
+CLAUDE.md

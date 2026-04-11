@@ -1,0 +1,10 @@
+services:
+  cliproxy:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8317:8317"   # cli-proxy-api direct
+      - "8318:8318"   # wrapper (throttled)
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ${HOME}/.cli-proxy-api:/root/.cli-proxy-api
